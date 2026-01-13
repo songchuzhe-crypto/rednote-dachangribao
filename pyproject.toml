@@ -1,0 +1,28 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "bigtech-daily"
+version = "0.1.0"
+description = "Minimal dry-run scraper for Newsbot reports"
+readme = "README.md"
+requires-python = ">=3.10"
+authors = [{name = "OpenAI", email = "noreply@example.com"}]
+license = {text = "MIT"}
+dependencies = [
+  "requests>=2.31.0",
+  "beautifulsoup4>=4.12.0",
+  "lxml>=5.2.0",
+  "typer>=0.12.0",
+  "pydantic>=2.7.0",
+]
+
+[project.scripts]
+bigtech-daily = "bigtech_daily.cli:app"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
